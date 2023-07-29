@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-bg{
+    background: linear-gradient(90deg, #36B1C7, #960B33);
+    transition: all .25s ease-out;
+}
+
+.text-bg{
+    width: fit-content;
+    transform-origin: 0% 0%;
+    background: linear-gradient(90deg, #36B1C7, #960B33);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-bg:hover{
+    scale: 1.05;
+}
