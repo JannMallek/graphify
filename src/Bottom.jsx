@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Bottom() {
   return (
-    <nav className='bg-slate-900 w-full text-white flex justify-around fixed bottom-0'>
+    <nav className='bg-slate-900 w-full text-white flex justify-around  absolute'>
       <div>
         <form action="https://api.web3forms.com/submit" method="POST" id="form">
           <input type="hidden" name="access_key" value="76aab1e9-62d5-448a-883e-536b95091da0" />
@@ -26,7 +26,7 @@ export default function Bottom() {
         <a href="#" className="fa fa-twitter"></a>
         </div>
       </div>
-        <h2 className='pl-8 text-sm fixed bottom-0 right-4'>made with ❤️ in Bochum, Germany</h2>
+        <h2 className='pl-8 text-sm  self-end '>made with ❤️ in Bochum, Germany</h2>
 
     </nav>
   )

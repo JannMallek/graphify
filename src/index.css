@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Header and bottom */
 .btn-bg{
     background: linear-gradient(90deg, #36B1C7, #960B33);
     transition: all .25s ease-out;
@@ -15,6 +16,39 @@
     -webkit-text-fill-color: transparent;
 }
 
-.btn-bg:hover{
-    scale: 1.05;
+
+/* Canvas and Terminal */
+.canvas{
+    width: 66%;
+    height: 90vh;
+}
+
+.terminal{
+    width: 33%;
+}
+
+.hover {
+    left: -10%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(40, 40, 41, 0.158);
+    position:absolute;
+  }
+
+.btn-flex{
+
+    position: relative;
+    cursor:pointer;
+    overflow:hidden;
+    flex: 50%;
+    @apply py-2;
+}
+
+.btn-flex:first-child{
+    border-right: solid 1px ;
+}
+
+.active{
+  background: #419fb767;
 }
