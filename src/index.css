@@ -47,8 +47,13 @@
 
 .btn-flex:first-child{
     border-right: solid 1px ;
+    border-top-left-radius: 8px;
+}
+
+.btn-flex:nth-child(2){
+    border-top-right-radius: 8px;
 }
 
 .active{
-  background: #419fb767;
+    content: '';
 }
