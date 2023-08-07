@@ -1,10 +1,21 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 
 import useStat from './useStat'
 
 const stateOptions = {
-  
+  pieChart:{
+    radius: 1,
+  },
+  vennDiagram: {
+    radius: 1,
+    overlay: 0.5 
+  },
+  circularChart:{
+    thickness: 0.2,
+    radius: 1
+  },
+
 }
 
 export default function Terminal({}) {
@@ -46,7 +57,7 @@ export default function Terminal({}) {
             data.forEach((element) => (
               <div className='dataInput'>
                 {
-                  //TODO remove button, name and value input, color
+                  //TODO remove button, name and value input, color + mode.current.data
                 }
               </div>
             ))
@@ -57,8 +68,6 @@ export default function Terminal({}) {
 }
 
 function createTween(hover, target){
-    const {top, bottom, left, right } =document.querySelector(target).getBoundingClientRect()
-    const hoverElement = document.querySelector(hover)
     gsap.set(hover, {scaleX:0, transformOrigin:"left center"})
     const tl = gsap.timeline({paused:true, defaults:{duration:0.5}, delay:0.2})
     let exitTime = 0
