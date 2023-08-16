@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Canvas } from '@react-three/fiber'
 
-export default function Canvas() {
+import { globalState } from './App.jsx'
+
+
+export default function CanvasCom() {
+  //access contents: all data changes on input using state
+  const { params } = useContext(globalState)
   return (
-    <canvas className='canvas mb-8'></canvas>
+    <Canvas className='canvas mb-8'></Canvas>
   )
 }

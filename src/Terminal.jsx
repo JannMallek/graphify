@@ -1,36 +1,23 @@
-import { useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 
-import useStat from './useStat'
-
-const stateOptions = {
-  pieChart:{
-    radius: 1,
-  },
-  vennDiagram: {
-    radius: 1,
-    overlay: 0.5 
-  },
-  circularChart:{
-    thickness: 0.2,
-    radius: 1
-  },
-
-}
+import { globalState } from './App.jsx'
 
 export default function Terminal({}) {
+    
+    //update globalState
+    const {params, setParams} = useContext(globalState)
+    //hover effects
     const container = useRef()
-    const [currentData, setCurrentData] = useState(null)
-    const { data, mode,  addData, removeData, setMode} = useStat()
     useEffect(()=>{
       gsap.to(container.current, {autoAlpha:1}) //fouc
         createTween(".hover.first", ".btn-flex.first")
         createTween(".hover.second", ".btn-flex.second")
         
+        //toggle active
         let activeButton = 1
         document.querySelectorAll(".btn-flex").forEach((button, index)=>{
             button.addEventListener("click", ()=>{
-              console.log(document.querySelector(".active")) 
                 if(activeButton != index + 1){
                   
                     document.querySelector(".active").classList.remove("active", "btn-bg")
@@ -44,6 +31,7 @@ export default function Terminal({}) {
         })
  }, [])
 
+
   return (
     <div className='terminal bg-slate-50 my-8 rounded-xl'>
         <div ref={container} className='flex  rounded-xl' >
@@ -54,19 +42,19 @@ export default function Terminal({}) {
           {
             //TODO options: absolute or relative output, total value, color theme: pick for Each, palette 
             //TODO changes on mode: chart options
-            data.forEach((element) => (
-              <div className='dataInput'>
-                {
-                  //TODO remove button, name and value input, color + mode.current.data
-                }
-              </div>
-            ))
+            // data.forEach((element) => (
+            //   <div className='dataInput'>
+            //     {
+            //       //TODO remove button, name and value input, color + mode.current.data
+            //     }
+              // </div>
+            // ))
           }
         </div>
     </div>
   )
 }
-
+//hover animation
 function createTween(hover, target){
     gsap.set(hover, {scaleX:0, transformOrigin:"left center"})
     const tl = gsap.timeline({paused:true, defaults:{duration:0.5}, delay:0.2})
