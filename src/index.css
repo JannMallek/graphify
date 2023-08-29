@@ -8,6 +8,14 @@
     transition: all .25s ease-out;
 }
 
+body{
+    background-color: #191616;
+}
+
+.bg-bottom{
+    background-color: #1F1C1D;
+}
+
 .text-bg{
     width: fit-content;
     transform-origin: 0% 0%;
@@ -24,7 +32,7 @@
 }
 
 .terminal{
-    width: 33%;
+    width: 53%;
 }
 
 .hover {

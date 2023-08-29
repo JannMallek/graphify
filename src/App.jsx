@@ -10,13 +10,18 @@ import CanvasCom from './Canvas.jsx'
 
 function App() {
   // recieve data / change data ==> rerender
-  const [ params, setparams] = useState({
-    data: ["test"]
+  const [ params, setParams] = useState({
+    data: [{content: "landwirtschaft", value: 30}, {content:"viehzucht", value:49}],
+    mode:"isometric"
   })
+
+function setGlobal(newState){
+  setparams(prev=> {newState})
+}
   
   
   return (
-    <globalState.Provider value={{params, setparams}}>
+    <globalState.Provider value={{params, setParams}}>
         <Header/>
         <div className='flex justify-between h-screen mx-8'>
           <CanvasCom/>

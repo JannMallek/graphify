@@ -2,11 +2,14 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 
 import { globalState } from './App.jsx'
+import Input from './Input.jsx'
+import { data } from 'autoprefixer'
 
 export default function Terminal({}) {
     
     //update globalState
     const {params, setParams} = useContext(globalState)
+    const [current, setCurrent] = useState(false)
     //hover effects
     const container = useRef()
     useEffect(()=>{
@@ -33,23 +36,16 @@ export default function Terminal({}) {
 
 
   return (
-    <div className='terminal bg-slate-50 my-8 rounded-xl'>
-        <div ref={container} className='flex  rounded-xl' >
-            <button className='btn-flex btn-bg active first text-2xl  flex justify-center font-semibold  bg-gray-300'><div className=''>Type</div><span className='hover first'></span></button>
-            <button className='btn-flex        second text-2xl  flex justify-center font-semibold  bg-gray-300'><div className=''>Data</div><span className='hover second'></span></button>
+    <div className='terminal bg-bottom my-8 rounded-xl'>
+        <div ref={container} className='flex  rounded-xl text-white ' >
+            <button onClick={()=> setCurrent(false)} className='btn-flex btn-bg active first text-2xl   flex justify-center font-semibold  '><div className=''>Type</div><span className='hover first'></span></button>
+            <button onClick={()=> setCurrent(true)} className='btn-flex        second text-2xl   flex justify-center font-semibold'><div className=''>Data</div><span className='hover second'></span></button>
         </div>
-        <div className="content">
-          {
-            //TODO options: absolute or relative output, total value, color theme: pick for Each, palette 
-            //TODO changes on mode: chart options
-            // data.forEach((element) => (
-            //   <div className='dataInput'>
-            //     {
-            //       //TODO remove button, name and value input, color + mode.current.data
-            //     }
-              // </div>
-            // ))
-          }
+        <div className="content mt-4">
+         { current && params.data.map((dataObject, index)=>{
+            console.log("here", dataObject)
+            return <Input Content={dataObject.content} key={index} id={index} Value={dataObject.value}/>
+         })}
         </div>
     </div>
   )

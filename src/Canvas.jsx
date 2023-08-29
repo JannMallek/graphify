@@ -7,6 +7,7 @@ import { globalState } from './App.jsx'
 export default function CanvasCom() {
   //access contents: all data changes on input using state
   const { params } = useContext(globalState)
+  console.log(params)
   return (
     <Canvas className='canvas mb-8'></Canvas>
   )

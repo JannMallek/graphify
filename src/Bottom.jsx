@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Bottom() {
   return (
-    <nav className='bg-slate-900 w-full text-white flex justify-around  absolute'>
+    <nav className='bg-bottom w-full text-white flex justify-around  absolute'>
       <div>
         <form action="https://api.web3forms.com/submit" method="POST" id="form">
           <input type="hidden" name="access_key" value="76aab1e9-62d5-448a-883e-536b95091da0" />
