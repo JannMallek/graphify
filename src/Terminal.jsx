@@ -3,7 +3,6 @@ import { gsap } from 'gsap'
 
 import { globalState } from './App.jsx'
 import Input from './Input.jsx'
-import { data } from 'autoprefixer'
 
 export default function Terminal({}) {
     
@@ -43,7 +42,6 @@ export default function Terminal({}) {
         </div>
         <div className="content mt-4">
          { current && params.data.map((dataObject, index)=>{
-            console.log("here", dataObject)
             return <Input Content={dataObject.content} key={index} id={index} Value={dataObject.value}/>
          })}
         </div>

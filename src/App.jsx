@@ -1,8 +1,8 @@
 import { useState, createContext, useContext} from 'react'
 
-import './App.css'
-import Header from './Header.jsx'
-import Bottom from './Bottom.jsx'
+import './assets/App.css'
+import Header from './assets/Header.jsx'
+import Bottom from './assets/Bottom.jsx'
 import Terminal from './Terminal.jsx'
 import CanvasCom from './Canvas.jsx'
 
@@ -15,13 +15,13 @@ function App() {
     mode:"isometric"
   })
 
-function setGlobal(newState){
-  setparams(prev=> {newState})
-}
-  
+  const [theme, setTheme] = useState({
+    colorTheme: "white",
+    colorPalette: ['#003fef', '#2343ff']
+  })
   
   return (
-    <globalState.Provider value={{params, setParams}}>
+    <globalState.Provider value={{params, setParams, theme, setTheme}}>
         <Header/>
         <div className='flex justify-between h-screen mx-8'>
           <CanvasCom/>
