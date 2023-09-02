@@ -1,12 +1,11 @@
 # graphify 
 
-base for graphify data visualizer
+Create fancy 3D visualisations and statistics in real time! <br>
+Download your finshed product as r3f code or as a image/pdf <br>
 
 ### features usw
 
-next.js 
-react-three-fiber
-Download Image 
+build in <br> next.js <br> r3f <br>
 
 ### Usage
 
