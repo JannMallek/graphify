@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 /* Header and bottom */
-.btn-bg{
-    background: linear-gradient(90deg, #36B1C7, #960B33);
-    transition: all .25s ease-out;
-}
 
 body{
     background-color: #191616;
+}
+
+.btn-bg{
+    background: linear-gradient(90deg, #36B1C7, #960B33);
+    transition: all .25s ease-out;
 }
 
 .bg-bottom{
@@ -64,4 +65,8 @@ body{
 
 .active{
     content: '';
+}
+
+.app{
+    height: calc(100vh - 112px);
 }
